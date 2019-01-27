@@ -1,4 +1,4 @@
-package com.example.demografie.Activitati;
+package com.example.demografie.Activitati.Activitati;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;

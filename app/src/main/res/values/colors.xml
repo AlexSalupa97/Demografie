@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!--<color name="colorPrimary">#000000</color>-->
+    <!--<color name="colorPrimaryDark">#000000</color>-->
+    <!--<color name="colorAccent">#D81B60</color>-->
+    <!--<color name="activated_color">#42aaf4</color>-->
+    <!--<color name="pressed_color">#4d90fe</color>-->
+    <!--<color name="default_color">#ffffff</color>-->
+
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#DDDDDD</color>
+    <color name="activated_color">#42aaf4</color>
+    <color name="pressed_color">#4d90fe</color>
+    <color name="default_color">#80ffffff</color>
+    <color name="silver">#DDDDDD</color>
+    <color name="bg_row_background">#90C02F1D</color>
+    <color name="item_name">#80535353</color>
+    <color name="description">#a9a9a9</color>
+    <color name="colorTransBg">#26000000</color>
+    <color name="orange">#F65416</color>
+    <color name="toolbarFade2"> #d7d2cc </color>
+    <color name="toolbarFade1"> #304352 </color>
+    <color name="azureButton"> #90304352  </color>
+    <color name="azure">#304352</color>
+    <color name="light_purple">#815882</color>
+    <color name="light_gold">#ECB16F</color>
+    <color name="light_vernil">#52D8D1</color>
+    <color name="light_blue" > #4c5D88</color>
+    <color name="darker_light_purple">#9C5A80</color>
+    <color name="silver2">#ADA996</color>
+
 </resources>

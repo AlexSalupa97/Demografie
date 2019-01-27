@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activitati.Activitati.SplashScreenActivity"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    tools:context=".Activitati.Activitati.TestActivity">
 
-    <ImageView
+    <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/population_logo"
-        />
-
+        android:id="@+id/graph"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
