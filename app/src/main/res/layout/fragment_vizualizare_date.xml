@@ -26,4 +26,16 @@
         android:layout_height="wrap_content"
         android:text="Mortalitatea pe ani (1990-2016)"/>
 
+    <Button
+        android:id="@+id/btnEmigranti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emigranti pe ani (1990-2017)"/>
+
+    <Button
+        android:id="@+id/btnImigranti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Imigranti pe ani (1991-2017)"/>
+
 </LinearLayout>

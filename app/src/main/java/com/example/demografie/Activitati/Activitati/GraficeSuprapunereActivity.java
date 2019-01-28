@@ -20,26 +20,50 @@ public class GraficeSuprapunereActivity extends AppCompatActivity {
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series=new LineGraphSeries<>();
-        series=DateNatalitatePeAniActivity.preluareLineSeriesNatalitatePeAni(getApplicationContext());
-        series.setColor(Color.GREEN);
+        if(getIntent().getStringExtra("tip").equals("naturala")) {
+            series = DateNatalitatePeAniActivity.preluareLineSeriesNatalitatePeAni(getApplicationContext());
+            series.setColor(Color.GREEN);
 
-        LineGraphSeries<DataPoint> series1=new LineGraphSeries<>();
-        series1=DateMortalitatePeAniActivity.preluareLineSeriesMortalitatePeAni(getApplicationContext());
-        series1.setColor(Color.RED);
+            LineGraphSeries<DataPoint> series1 = new LineGraphSeries<>();
+            series1 = DateMortalitatePeAniActivity.preluareLineSeriesMortalitatePeAni(getApplicationContext());
+            series1.setColor(Color.RED);
 
-        series.setTitle("Natalitate");;
-        series1.setTitle("Mortalitate");
-        graph.getLegendRenderer().setVisible(true);
-        graph.getLegendRenderer().setBackgroundColor(android.R.color.white);
-        graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+            series.setTitle("Natalitate");
+            series1.setTitle("Mortalitate");
+            graph.getLegendRenderer().setVisible(true);
+            graph.getLegendRenderer().setBackgroundColor(android.R.color.white);
+            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
 
 
-        graph.addSeries(series);
-        graph.addSeries(series1);
+            graph.addSeries(series);
+            graph.addSeries(series1);
 
-        ActionBar actionBar=getSupportActionBar();
-        actionBar.setTitle("Natalitate-Mortalitate (1990-2016)");
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle("Natalitate-Mortalitate (1990-2016)");
 //        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            series = DateImigrantiActivity.preluareLineSeriesImigranti(getApplicationContext());
+            series.setColor(Color.GREEN);
+
+            LineGraphSeries<DataPoint> series1 = new LineGraphSeries<>();
+            series1 = DateEmigrantiActivity.preluareLineSeriesEmigranti(getApplicationContext());
+            series1.setColor(Color.RED);
+
+            series.setTitle("Imigranti");
+            series1.setTitle("Emigranti");
+            graph.getLegendRenderer().setVisible(true);
+            graph.getLegendRenderer().setBackgroundColor(android.R.color.white);
+            graph.getLegendRenderer().setAlign(LegendRenderer.LegendAlign.TOP);
+
+
+            graph.addSeries(series);
+            graph.addSeries(series1);
+
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle("Imigratie-Emigratie (1990-2017)");
+        }
 
 
         graph.getViewport().setScalableY(true);

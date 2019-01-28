@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.demografie.Activitati.Activitati.DateEmigrantiActivity;
+import com.example.demografie.Activitati.Activitati.DateImigrantiActivity;
 import com.example.demografie.Activitati.Activitati.DateMortalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
@@ -32,10 +34,13 @@ public class GraficeFragment extends Fragment {
     View rootView;
 
     ListView listView;
+    ListView listViewMigratie;
     ListView listView1;
     public static ArrayList<Grafice> lista;
     public static ArrayList<GraficeBare> listaBare;
+    public static ArrayList<Grafice> listaMigratii;
     Button btnSuprapunere;
+    Button btnSuprapunereMigratii;
 
     GraphView gvGraph;
 
@@ -52,34 +57,63 @@ public class GraficeFragment extends Fragment {
         lista.add(new Grafice("Natalitate pe ani (1990-2016)", DateNatalitatePeAniActivity.preluareLineSeriesNatalitatePeAni(getActivity())));
         lista.add(new Grafice("Mortalitate pe ani (1990-2016)", DateMortalitatePeAniActivity.preluareLineSeriesMortalitatePeAni(getActivity())));
 
+
         listView = (ListView) rootView.findViewById(R.id.lvGrafice);
         AdaptorGraficeLV adaptor = new AdaptorGraficeLV(getActivity(), lista);
         listView.setAdapter(adaptor);
 
-        btnSuprapunere=(Button)rootView.findViewById(R.id.btnVizualizareSuprapunere);
+        btnSuprapunere = (Button) rootView.findViewById(R.id.btnVizualizareSuprapunere);
         btnSuprapunere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), GraficeSuprapunereActivity.class);
+                Intent intent = new Intent(getActivity(), GraficeSuprapunereActivity.class);
+                intent.putExtra("tip", "naturala");
                 startActivity(intent);
             }
         });
 
+        listaMigratii = new ArrayList<>();
+        listaMigratii.add(new Grafice("Emigranti pe ani (1990-2017)", DateEmigrantiActivity.preluareLineSeriesEmigranti(getActivity())));
+        listaMigratii.add(new Grafice("Imigranti pe ani (1991-2017)", DateImigrantiActivity.preluareLineSeriesImigranti(getActivity())));
+
+        listViewMigratie = (ListView) rootView.findViewById(R.id.lvGraficeMigratie);
+        AdaptorGraficeLV adaptorMigratie = new AdaptorGraficeLV(getActivity(), listaMigratii);
+        listViewMigratie.setAdapter(adaptorMigratie);
 
 
+        btnSuprapunereMigratii = (Button) rootView.findViewById(R.id.btnVizualizareSuprapunereMigratie);
+        btnSuprapunereMigratii.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), GraficeSuprapunereActivity.class);
+                intent.putExtra("tip", "migratie");
+                startActivity(intent);
+            }
+        });
 
-        listaBare=new ArrayList<>();
+        listaBare = new ArrayList<>();
         listaBare.add(new GraficeBare("Natalitate 1960", DateNatalitatePeJudeteActivity.preluareBarSeriesNatalitate1960(getActivity())));
         listaBare.add(new GraficeBare("Natalitate 2016", DateNatalitatePeJudeteActivity.preluareBarSeriesNatalitate2016(getActivity())));
-        listView1=(ListView) rootView.findViewById(R.id.lvGrafice1);
-        AdaptorGraficeBareLV adaptorBare=new AdaptorGraficeBareLV(getActivity(),listaBare);
+        listView1 = (ListView) rootView.findViewById(R.id.lvGrafice1);
+        AdaptorGraficeBareLV adaptorBare = new AdaptorGraficeBareLV(getActivity(), listaBare);
         listView1.setAdapter(adaptorBare);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(getActivity(), GraficeActivity.class);
-                intent.putExtra("pozitie",String.valueOf(position));
+                Intent intent = new Intent(getActivity(), GraficeActivity.class);
+                intent.putExtra("pozitie", String.valueOf(position));
+                intent.putExtra("tip","natural");
+                startActivity(intent);
+            }
+        });
+
+        listViewMigratie.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), GraficeActivity.class);
+                intent.putExtra("tip","migratie");
+                intent.putExtra("pozitie", String.valueOf(position));
                 startActivity(intent);
             }
         });
@@ -87,14 +121,11 @@ public class GraficeFragment extends Fragment {
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(getActivity(), GraficeBarActivity.class);
-                intent.putExtra("pozitie",String.valueOf(position));
+                Intent intent = new Intent(getActivity(), GraficeBarActivity.class);
+                intent.putExtra("pozitie", String.valueOf(position));
                 startActivity(intent);
             }
         });
-
-
-
 
 
 //        GraphView graph = (GraphView) rootView.findViewById(R.id.graph);

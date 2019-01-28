@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.demografie.Activitati.Activitati.DateEmigrantiActivity;
+import com.example.demografie.Activitati.Activitati.DateImigrantiActivity;
 import com.example.demografie.Activitati.Activitati.DateMortalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
@@ -22,6 +24,8 @@ public class VizualizareDateFragment extends Fragment {
     Button btnNatalitate;
     Button btnNatalitatePeAni;
     Button btnMortalitatePeAni;
+    Button btnImigranti;
+    Button btnEmigranti;
     View rootView;
 
     public VizualizareDateFragment() {
@@ -58,6 +62,24 @@ public class VizualizareDateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), DateMortalitatePeAniActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnImigranti=(Button)rootView.findViewById(R.id.btnImigranti);
+        btnImigranti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), DateImigrantiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnEmigranti=(Button)rootView.findViewById(R.id.btnEmigranti);
+        btnEmigranti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), DateEmigrantiActivity.class);
                 startActivity(intent);
             }
         });

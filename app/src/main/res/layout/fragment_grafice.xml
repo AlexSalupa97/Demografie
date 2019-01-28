@@ -13,10 +13,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Line Charts"
+            android:text="Miscarea naturala a populatiei"
             android:textStyle="bold|italic"/>
 
 
@@ -38,6 +38,33 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnVizualizareSuprapunere"
             android:text="Vizualizare suprapunere natalitate-mortalitate"/>
+
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Miscarea migratorie a populatiei"
+            android:textStyle="bold|italic"/>
+
+
+        <ListView
+            android:id="@+id/lvGraficeMigratie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorAccent"
+            android:divider="@color/silver2"
+            android:dividerHeight="8dp"
+            android:orientation="vertical" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnVizualizareSuprapunereMigratie"
+            android:text="Vizualizare suprapunere imigratie-emigratie"/>
 
         <!--<LinearLayout-->
             <!--android:visibility="gone"-->
@@ -65,6 +92,7 @@
         <!--</LinearLayout>-->
 
         <TextView
+            android:visibility="gone"
             android:layout_margin="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,6 +100,7 @@
             android:textStyle="bold|italic"/>
 
         <ListView
+            android:visibility="gone"
             android:id="@+id/lvGrafice1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

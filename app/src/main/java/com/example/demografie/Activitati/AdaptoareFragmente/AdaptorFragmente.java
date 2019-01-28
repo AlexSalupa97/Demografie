@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.demografie.Activitati.Fragmente.CalculIndicatoriFragment;
 import com.example.demografie.Activitati.Fragmente.GraficeFragment;
+import com.example.demografie.Activitati.Fragmente.GraficeFragment1;
 import com.example.demografie.Activitati.Fragmente.VizualizareDateFragment;
 
 
@@ -23,8 +24,11 @@ public class AdaptorFragmente extends FragmentPagerAdapter {
         if (position == 0)
             return "Vizualizare date";
         else if (position == 1)
-            return "Grafice";
+            return "Line Charts";
         else
+            if(position==2)
+                return "Bar Charts";
+            else
             return "Calcul indicatori";
     }
 
@@ -35,11 +39,14 @@ public class AdaptorFragmente extends FragmentPagerAdapter {
         else if (position == 1)
             return new GraficeFragment();
         else
+        if(position==2)
+            return new GraficeFragment1();
+        else
             return new CalculIndicatoriFragment();
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

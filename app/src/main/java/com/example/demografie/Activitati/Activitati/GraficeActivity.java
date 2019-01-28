@@ -17,12 +17,25 @@ public class GraficeActivity extends AppCompatActivity {
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
         String pozitie = getIntent().getStringExtra("pozitie");
+        String tip=getIntent().getStringExtra("tip");
+        int x=1;
 
-        ActionBar actionBar=getSupportActionBar();
-        actionBar.setTitle(GraficeFragment.lista.get(Integer.valueOf(pozitie)).getTitlu());
+        if(getIntent().getStringExtra("tip").equals("migratie"))
+        {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle(GraficeFragment.listaMigratii.get(Integer.valueOf(pozitie)).getTitlu());
 //        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
 
-        graph.addSeries(GraficeFragment.lista.get(Integer.parseInt(pozitie)).getSeries());
+            graph.addSeries(GraficeFragment.listaMigratii.get(Integer.parseInt(pozitie)).getSeries());
+        }
+        else {
+
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle(GraficeFragment.lista.get(Integer.valueOf(pozitie)).getTitlu());
+//        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
+
+            graph.addSeries(GraficeFragment.lista.get(Integer.parseInt(pozitie)).getSeries());
+        }
 
         graph.getViewport().setScalableY(true);
 
