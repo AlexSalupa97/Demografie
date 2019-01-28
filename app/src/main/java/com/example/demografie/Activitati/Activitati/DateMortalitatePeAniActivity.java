@@ -6,8 +6,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.example.demografie.Activitati.Adaptoare.AdaptorDateNatalitatiPeAniLV;
-import com.example.demografie.Activitati.Clase.CSVNatalitatePeAni;
+import com.example.demografie.Activitati.Adaptoare.AdaptorDateMortalitatePeAniLV;
+import com.example.demografie.Activitati.Clase.CSVMortalitatePeAni;
 import com.example.demografie.R;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DateNatalitatePeAniActivity extends AppCompatActivity {
+public class DateMortalitatePeAniActivity extends AppCompatActivity {
 
     CSVReader reader;
     ListView listView;
@@ -26,7 +26,7 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_date_natalitate_pe_ani);
+        setContentView(R.layout.activity_date_mortalitate_pe_ani);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Mortalitatea pe ani");
@@ -37,7 +37,7 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         List<String[]> listaString = null;
 
         try {
-            reader = new CSVReader(new InputStreamReader(getResources().openRawResource(R.raw.natalitate_ani)));
+            reader = new CSVReader(new InputStreamReader(getResources().openRawResource(R.raw.mortalitate_ani)));
             try {
                 listaString = reader.readAll();
             } catch (IOException e) {
@@ -48,17 +48,17 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         }
 
 
-        ArrayList<CSVNatalitatePeAni> listaNatalitatePeAni = new ArrayList<>();
+        ArrayList<CSVMortalitatePeAni> listaMortalitatePeAni = new ArrayList<>();
 
         int j=1990;
         for (int i = 0; i < listaString.size(); i = i + 1) {
             String[] s = listaString.get(i);
-            listaNatalitatePeAni.add(new CSVNatalitatePeAni(j,Integer.valueOf(s[0])));
+            listaMortalitatePeAni.add(new CSVMortalitatePeAni(j,Integer.valueOf(s[0])));
             j++;
         }
-        listView = (ListView) findViewById(R.id.lvNatalitate);
-        AdaptorDateNatalitatiPeAniLV adaptorDateNatalitatiLV = new AdaptorDateNatalitatiPeAniLV(this, listaNatalitatePeAni);
-        listView.setAdapter(adaptorDateNatalitatiLV);
+        listView = (ListView) findViewById(R.id.lvMortalitate);
+        AdaptorDateMortalitatePeAniLV adaptorDateMortalitatePeAniLV = new AdaptorDateMortalitatePeAniLV(this, listaMortalitatePeAni);
+        listView.setAdapter(adaptorDateMortalitatePeAniLV);
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -71,7 +71,7 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         return true;
     }
 
-    public static LineGraphSeries<DataPoint> preluareLineSeriesNatalitatePeAni(Context context)
+    public static LineGraphSeries<DataPoint> preluareLineSeriesMortalitatePeAni(Context context)
     {
         CSVReader reader;
         StringBuilder sb = new StringBuilder();
@@ -79,7 +79,7 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         List<String[]> listaString = null;
 
         try {
-            reader = new CSVReader(new InputStreamReader(context.getResources().openRawResource(R.raw.natalitate_ani)));
+            reader = new CSVReader(new InputStreamReader(context.getResources().openRawResource(R.raw.mortalitate_ani)));
             try {
                 listaString = reader.readAll();
             } catch (IOException e) {
@@ -90,18 +90,18 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         }
 
 
-        ArrayList<CSVNatalitatePeAni> listaNatalitatePeAni = new ArrayList<>();
+        ArrayList<CSVMortalitatePeAni> listaMortalitatePeAni = new ArrayList<>();
 
         int j=1990;
         for (int i = 0; i < listaString.size(); i = i + 1) {
             String[] s = listaString.get(i);
-            listaNatalitatePeAni.add(new CSVNatalitatePeAni(j,Integer.valueOf(s[0])));
+            listaMortalitatePeAni.add(new CSVMortalitatePeAni(j,Integer.valueOf(s[0])));
             j++;
         }
 
         LineGraphSeries<DataPoint> series=new LineGraphSeries<>();
-        for (int i = 0; i < listaNatalitatePeAni.size(); i++) {
-            series.appendData(new DataPoint(listaNatalitatePeAni.get(i).getAn(), listaNatalitatePeAni.get(i).getValoare()), false, 100);
+        for (int i = 0; i < listaMortalitatePeAni.size(); i++) {
+            series.appendData(new DataPoint(listaMortalitatePeAni.get(i).getAn(), listaMortalitatePeAni.get(i).getValoare()), false, 100);
         }
         return series;
     }

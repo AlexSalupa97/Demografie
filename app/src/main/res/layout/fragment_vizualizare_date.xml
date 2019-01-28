@@ -20,4 +20,10 @@
         android:layout_height="wrap_content"
         android:text="Natalitatea pe ani (1990-2016)"/>
 
+    <Button
+        android:id="@+id/btnMortalitatePeAni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mortalitatea pe ani (1990-2016)"/>
+
 </LinearLayout>

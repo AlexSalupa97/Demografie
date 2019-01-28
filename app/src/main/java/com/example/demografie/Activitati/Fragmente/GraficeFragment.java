@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.demografie.Activitati.Activitati.DateMortalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
 import com.example.demografie.Activitati.Activitati.GraficeActivity;
@@ -43,6 +44,7 @@ public class GraficeFragment extends Fragment {
 
         lista = new ArrayList<>();
         lista.add(new Grafice("Natalitate pe ani (1990-2016)", DateNatalitatePeAniActivity.preluareLineSeriesNatalitatePeAni(getActivity())));
+        lista.add(new Grafice("Mortalitate pe ani (1990-2016)", DateMortalitatePeAniActivity.preluareLineSeriesMortalitatePeAni(getActivity())));
 
         listView = (ListView) rootView.findViewById(R.id.lvGrafice);
         AdaptorGraficeLV adaptor = new AdaptorGraficeLV(getActivity(), lista);
