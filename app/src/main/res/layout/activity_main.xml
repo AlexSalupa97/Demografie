@@ -12,19 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="100dp"
-        android:bottomLeftRadius="8dp"
-        android:bottomRightRadius="8dp"
-        android:text="Vezi ceva"
-        android:textColor="@color/colorPrimary"
-        android:topLeftRadius="8dp"
-        android:topRightRadius="8dp" />
+
+
+        <TextView
+            android:text="Titlul proiectului"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:shadowColor="#000000"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="1.6"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical|center_horizontal"/>
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:bottomLeftRadius="8dp"
+            android:bottomRightRadius="8dp"
+            android:text="Vizualizare date"
+            android:textColor="@color/colorAccent"
+            android:topLeftRadius="8dp"
+            android:topRightRadius="8dp"
+            style="?buttonBarButtonStyle"/>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -33,9 +48,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@drawable/gradient_redocean"
+        app:headerLayout="@layout/navigation_drawer_header"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@menu/navigation_drawer"
-        app:headerLayout="@layout/navigation_drawer_header"/>
+        app:menu="@menu/navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

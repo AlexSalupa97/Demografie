@@ -6,9 +6,10 @@
     tools:context=".Activitati.Fragmente.VizualizareDateFragment">
 
 
-    <TextView
+    <Button
+        android:id="@+id/btnNatalitate"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Vizualizare date fragment" />
+        android:layout_height="wrap_content"
+        android:text="Natalitate"/>
 
 </FrameLayout>

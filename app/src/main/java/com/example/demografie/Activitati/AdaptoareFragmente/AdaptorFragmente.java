@@ -21,9 +21,9 @@ public class AdaptorFragmente extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0)
-            return "Grafice";
-        else if (position == 1)
             return "Vizualizare date";
+        else if (position == 1)
+            return "Grafice";
         else
             return "Calcul indicatori";
     }
@@ -31,9 +31,9 @@ public class AdaptorFragmente extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0)
-            return new GraficeFragment();
-        else if (position == 1)
             return new VizualizareDateFragment();
+        else if (position == 1)
+            return new GraficeFragment();
         else
             return new CalculIndicatoriFragment();
     }

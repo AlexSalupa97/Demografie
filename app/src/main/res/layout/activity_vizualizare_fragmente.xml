@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabBackground="@drawable/gradient_redocean_vertical"
-        style="@style/CategoryTab"/>
+        style="@style/CategoryTab"
+        app:tabMode="scrollable"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"

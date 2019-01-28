@@ -1,12 +1,15 @@
 package com.example.demografie.Activitati.Fragmente;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.demografie.Activitati.Activitati.DateNatalitateActivity;
 import com.example.demografie.R;
 
 /**
@@ -14,6 +17,7 @@ import com.example.demografie.R;
  */
 public class VizualizareDateFragment extends Fragment {
 
+    Button btnNatalitate;
     View rootView;
 
     public VizualizareDateFragment() {
@@ -26,7 +30,17 @@ public class VizualizareDateFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_vizualizare_date, container, false);
+
+        btnNatalitate=(Button)rootView.findViewById(R.id.btnNatalitate);
+        btnNatalitate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), DateNatalitateActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return rootView;
     }
-
 }
+
