@@ -10,9 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activitati.Activitati.GraficeBarActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".Activitati.Activitati.DateNatalitateActivity" />
+        <activity android:name=".Activitati.Activitati.DateNatalitatePeAniActivity"></activity>
+        <activity
+            android:name=".Activitati.Activitati.GraficeBarActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Activitati.Activitati.DateNatalitatePeJudeteActivity" />
         <activity
             android:name=".Activitati.Activitati.GraficeActivity"
             android:screenOrientation="landscape" />

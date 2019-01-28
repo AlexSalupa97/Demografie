@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/silver2"
+    android:orientation="vertical"
     tools:context=".Activitati.Fragmente.VizualizareDateFragment">
 
 
@@ -13,4 +14,10 @@
         android:layout_height="wrap_content"
         android:text="Natalitatea pe judete (1960 si 2016)"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnNatalitatePeAni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Natalitatea pe ani (1990-2016)"/>
+
+</LinearLayout>

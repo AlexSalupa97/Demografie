@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.demografie.Activitati.Activitati.DateNatalitateActivity;
+import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
+import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
 import com.example.demografie.Activitati.Activitati.GraficeActivity;
 import com.example.demografie.Activitati.Activitati.GraficeBarActivity;
 import com.example.demografie.Activitati.Adaptoare.AdaptorGraficeBareLV;
@@ -19,8 +20,6 @@ import com.example.demografie.Activitati.Adaptoare.AdaptorGraficeLV;
 import com.example.demografie.Activitati.Clase.Grafice;
 import com.example.demografie.Activitati.Clase.GraficeBare;
 import com.example.demografie.R;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
 
@@ -43,51 +42,18 @@ public class GraficeFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_grafice, container, false);
 
         lista = new ArrayList<>();
-        lista.add(new Grafice("Grafic1", new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(6, 20)
-        })));
-        lista.add(new Grafice("Grafic2", new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(6, 20),
-                new DataPoint(8, 20),
-                new DataPoint(9, 20),
-                new DataPoint(30, 20),
-                new DataPoint(100, 20)
-        })));
+        lista.add(new Grafice("Natalitate pe ani (1990-2016)", DateNatalitatePeAniActivity.preluareLineSeriesNatalitatePeAni(getActivity())));
 
-        lista.add(new Grafice("Grafic3", new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(6, 20),
-                new DataPoint(8, 20),
-                new DataPoint(9, 20),
-                new DataPoint(30, 20),
-                new DataPoint(100, 20)
-        })));
-
-        lista.add(new Grafice("Grafic4", new LineGraphSeries<>(new DataPoint[]{
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(6, 20),
-                new DataPoint(8, 20),
-                new DataPoint(9, 20),
-                new DataPoint(30, 20),
-                new DataPoint(100, 20)
-        })));
         listView = (ListView) rootView.findViewById(R.id.lvGrafice);
         AdaptorGraficeLV adaptor = new AdaptorGraficeLV(getActivity(), lista);
         listView.setAdapter(adaptor);
 
+
+
+
         listaBare=new ArrayList<>();
-        listaBare.add(new GraficeBare("Natalitate 1960", DateNatalitateActivity.preluareBarSeriesNatalitate1960(getActivity())));
-        listaBare.add(new GraficeBare("Natalitate 2016", DateNatalitateActivity.preluareBarSeriesNatalitate2016(getActivity())));
+        listaBare.add(new GraficeBare("Natalitate 1960", DateNatalitatePeJudeteActivity.preluareBarSeriesNatalitate1960(getActivity())));
+        listaBare.add(new GraficeBare("Natalitate 2016", DateNatalitatePeJudeteActivity.preluareBarSeriesNatalitate2016(getActivity())));
         listView1=(ListView) rootView.findViewById(R.id.lvGrafice1);
         AdaptorGraficeBareLV adaptorBare=new AdaptorGraficeBareLV(getActivity(),listaBare);
         listView1.setAdapter(adaptorBare);

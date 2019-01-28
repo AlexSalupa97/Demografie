@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DateNatalitateActivity extends AppCompatActivity {
+public class DateNatalitatePeJudeteActivity extends AppCompatActivity {
 
     TextView tvVizualziareDate;
     public static BarGraphSeries<DataPoint> series;
@@ -34,7 +34,7 @@ public class DateNatalitateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_date_natalitate);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Natalitate");
+        actionBar.setTitle("Natalitatea pe judete");
 
 
         StringBuilder sb = new StringBuilder();

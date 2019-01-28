@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.demografie.Activitati.Activitati.DateNatalitateActivity;
+import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
+import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
 import com.example.demografie.R;
 
 /**
@@ -18,6 +19,7 @@ import com.example.demografie.R;
 public class VizualizareDateFragment extends Fragment {
 
     Button btnNatalitate;
+    Button btnNatalitatePeAni;
     View rootView;
 
     public VizualizareDateFragment() {
@@ -35,7 +37,16 @@ public class VizualizareDateFragment extends Fragment {
         btnNatalitate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), DateNatalitateActivity.class);
+                Intent intent=new Intent(getActivity(), DateNatalitatePeJudeteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnNatalitatePeAni=(Button)rootView.findViewById(R.id.btnNatalitatePeAni);
+        btnNatalitatePeAni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), DateNatalitatePeAniActivity.class);
                 startActivity(intent);
             }
         });
