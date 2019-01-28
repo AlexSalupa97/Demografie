@@ -49,8 +49,8 @@ public class AdaptorDateNatalitatiLV extends ArrayAdapter<CSVNatalitate> {
 
 
         holder.tvJudet.setText(curent.getJudet());
-        holder.tv1960.setText(String.valueOf(curent.getNumarNouNascuti1960()));
-        holder.tv2016.setText(String.valueOf(curent.getNumarNouNascuti2016()));
+        holder.tv1960.setText("1960: "+String.valueOf(curent.getNumarNouNascuti1960()));
+        holder.tv2016.setText("2016: "+String.valueOf(curent.getNumarNouNascuti2016()));
 
         return viewRefolosibil;
 
