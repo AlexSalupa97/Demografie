@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.demografie.Activitati.Activitati.DateMortalitatePeAniActivity;
@@ -16,11 +17,13 @@ import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
 import com.example.demografie.Activitati.Activitati.GraficeActivity;
 import com.example.demografie.Activitati.Activitati.GraficeBarActivity;
+import com.example.demografie.Activitati.Activitati.GraficeSuprapunereActivity;
 import com.example.demografie.Activitati.Adaptoare.AdaptorGraficeBareLV;
 import com.example.demografie.Activitati.Adaptoare.AdaptorGraficeLV;
 import com.example.demografie.Activitati.Clase.Grafice;
 import com.example.demografie.Activitati.Clase.GraficeBare;
 import com.example.demografie.R;
+import com.jjoe64.graphview.GraphView;
 
 import java.util.ArrayList;
 
@@ -32,6 +35,9 @@ public class GraficeFragment extends Fragment {
     ListView listView1;
     public static ArrayList<Grafice> lista;
     public static ArrayList<GraficeBare> listaBare;
+    Button btnSuprapunere;
+
+    GraphView gvGraph;
 
     public GraficeFragment() {
         // Required empty public constructor
@@ -49,6 +55,15 @@ public class GraficeFragment extends Fragment {
         listView = (ListView) rootView.findViewById(R.id.lvGrafice);
         AdaptorGraficeLV adaptor = new AdaptorGraficeLV(getActivity(), lista);
         listView.setAdapter(adaptor);
+
+        btnSuprapunere=(Button)rootView.findViewById(R.id.btnVizualizareSuprapunere);
+        btnSuprapunere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), GraficeSuprapunereActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
