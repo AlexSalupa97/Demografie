@@ -1,5 +1,6 @@
 package com.example.demografie.Activitati.Activitati;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -67,5 +68,35 @@ public class DatePopulatieActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+
+    public static ArrayList<CSVMortalitatePeAni> preluarePopulatie(Context context)
+    {
+        CSVReader reader;
+        StringBuilder sb = new StringBuilder();
+
+        List<String[]> listaString = null;
+
+        try {
+            reader = new CSVReader(new InputStreamReader(context.getResources().openRawResource(R.raw.pop_totala_1ianuarie)));
+            try {
+                listaString = reader.readAll();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (Exception ex) {
+
+        }
+
+
+        ArrayList<CSVMortalitatePeAni> listaMortalitatePeAni = new ArrayList<>();
+
+        int j = 1992;
+        for (int i = 0; i < listaString.size(); i = i + 1) {
+            String[] s = listaString.get(i);
+            listaMortalitatePeAni.add(new CSVMortalitatePeAni(j, Integer.valueOf(s[0])));
+            j++;
+        }
+        return listaMortalitatePeAni;
     }
 }

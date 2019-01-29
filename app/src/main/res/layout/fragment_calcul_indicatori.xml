@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/silver2"
     tools:context=".Activitati.Fragmente.CalculIndicatoriFragment">
 
-    <TextView
-        android:id="@+id/tvVariatieGenerala"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:id="@+id/lvPopulatie"
+        android:dividerHeight="8dp"
+        android:divider="@color/silver2"/>
 
-</FrameLayout>
+</LinearLayout>
