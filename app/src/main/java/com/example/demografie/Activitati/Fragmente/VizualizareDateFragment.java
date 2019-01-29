@@ -14,6 +14,7 @@ import com.example.demografie.Activitati.Activitati.DateImigrantiActivity;
 import com.example.demografie.Activitati.Activitati.DateMortalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeAniActivity;
 import com.example.demografie.Activitati.Activitati.DateNatalitatePeJudeteActivity;
+import com.example.demografie.Activitati.Activitati.DatePopulatieActivity;
 import com.example.demografie.R;
 
 /**
@@ -26,6 +27,7 @@ public class VizualizareDateFragment extends Fragment {
     Button btnMortalitatePeAni;
     Button btnImigranti;
     Button btnEmigranti;
+    Button btnPopulatie;
     View rootView;
 
     public VizualizareDateFragment() {
@@ -80,6 +82,15 @@ public class VizualizareDateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getActivity(), DateEmigrantiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnPopulatie=(Button)rootView.findViewById(R.id.btnPopulatieTotala);
+        btnPopulatie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), DatePopulatieActivity.class);
                 startActivity(intent);
             }
         });

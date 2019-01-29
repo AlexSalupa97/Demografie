@@ -32,10 +32,17 @@
         android:layout_height="wrap_content"
         android:text="Emigranti pe ani (1990-2017)"/>
 
+
     <Button
         android:id="@+id/btnImigranti"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Imigranti pe ani (1991-2017)"/>
+
+    <Button
+        android:id="@+id/btnPopulatieTotala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Populatie totala 1 ianuarie (1992-2018)"/>
 
 </LinearLayout>
