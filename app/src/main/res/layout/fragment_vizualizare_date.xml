@@ -43,6 +43,6 @@
         android:id="@+id/btnPopulatieTotala"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Populatie totala 1 ianuarie (1992-2018)"/>
+        android:text="Populatia dupa domiciliu la 1 ianuarie (1992-2018)"/>
 
 </LinearLayout>

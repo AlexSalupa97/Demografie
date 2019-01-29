@@ -105,4 +105,34 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         }
         return series;
     }
+
+    public static ArrayList<CSVNatalitatePeAni> preluareNatalitatePeAni(Context context)
+    {
+        CSVReader reader;
+        StringBuilder sb = new StringBuilder();
+
+        List<String[]> listaString = null;
+
+        try {
+            reader = new CSVReader(new InputStreamReader(context.getResources().openRawResource(R.raw.natalitate_ani)));
+            try {
+                listaString = reader.readAll();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (Exception ex) {
+
+        }
+
+
+        ArrayList<CSVNatalitatePeAni> listaNatalitatePeAni = new ArrayList<>();
+
+        int j=1990;
+        for (int i = 0; i < listaString.size(); i = i + 1) {
+            String[] s = listaString.get(i);
+            listaNatalitatePeAni.add(new CSVNatalitatePeAni(j,Integer.valueOf(s[0])));
+            j++;
+        }
+        return listaNatalitatePeAni;
+    }
 }
