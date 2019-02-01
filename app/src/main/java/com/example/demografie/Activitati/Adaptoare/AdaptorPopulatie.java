@@ -59,6 +59,11 @@ public class AdaptorPopulatie extends ArrayAdapter<Populatie> {
         holder.tvPopDeclarata.setText("Pop. declarata: "+String.valueOf(curent.getPopulatieDeclarata()));
         holder.tvPopCalculata.setText("Pop. calculata: "+String.valueOf(curent.getPopulatieCalculata()));
 
+        if(curent.getPopulatieDeclarata()-curent.getPopulatieCalculata()<30000)
+            viewRefolosibil.setBackgroundResource(R.drawable.gradient_ok);
+        else
+            viewRefolosibil.setBackgroundResource(R.drawable.gradient_not_ok);
+
 
 
         return viewRefolosibil;
