@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.demografie.R;
 
@@ -107,7 +106,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
          if (id == R.id.informatiiAplicatie) {
-            Toast.makeText(getApplicationContext(), "Informatii aplicatie", Toast.LENGTH_SHORT).show();
+           Intent intent=new Intent(getApplicationContext(),InformatiiActivity.class);
+           startActivity(intent);
         } else if (id == R.id.iesireAplicatie) {
             drawerLayout.closeDrawer(GravityCompat.START);
             finish();

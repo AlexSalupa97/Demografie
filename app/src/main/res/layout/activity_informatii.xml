@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver2"
+    tools:context=".Activitati.Activitati.InformatiiActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textSize="18sp"
+            android:text=" Mişcarea generala a populaţiei constituie o componentă esenţială de caracterizare a proceselor demografice dintr-o anumită colectivitate umană. Prin intermediul acestui proiect, ne propunem să analizăm, dintr-o perspectivă temporală, variația naturală și migratorie a populației României în perioada 1990-2016, folosind următorii indicatori: natalitatea pe ani, mortalitatea pe ani, emigranți pe ani, imigranți pe ani, dar si impactul acestora in calculul populatiei declarate." />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Primul indicator folosit este natalitatea. Natalitatea este fenomenul de bază al creşterii populaţiei, sporul populaţiei fiind rezultatul excedentului numeric de nou-născuţi asupra deceselor. Populaţia dintr-o regiune considerată poate creşte şi pe seama imigraţiei, dar modalitatea fundamentală a sporirii ei este mişcarea naturală." />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Al doilea indicator folosit este mortalitatea. Mortalitatea reprezintă, ca fenomen demografic, suma tuturor deceselor (evenimente demografice) înregistrate într-o perioada de timp într-o populatie data." />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Al treilea indicator folosit este numărul de emigranți. Emigrația este actul sau fenomenul părăsirii țării sau regiunii natale de către un individ sau grup de indivizi pentru a se stabili în alta. Emigrarea poate avea diferite motive, unele politice, altele economice, sau chiar personale (precum căsătoria cu un cetățean al unui alt stat). " />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Al patrulea indicator folosit este numărul de imigranți. Imigrația este o mișcare a oamenilor într-o altă țară sau regiune în care aceștia nu sunt nativi, cu scopul de a se stabili acolo cu traiul, în special pentru o perioadă permanentă. Imigrația este o urmare a unui număr de factori, inclusiv: prosperitate economică, motive politice, motive familiale (de ex: reunificarea acesteia), de a scăpa de un conflict sau dezastru natural, sau pur și simpla dorința de a-și schimba mediul de viață." />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Ultimul indicator este populația după domiciliu. Populatia după domiciliu reprezintă numărul persoanelor cu cetatenie romana si domiciliu pe teritoriul Romaniei, delimitat dupa criterii administrativ-teritoriale. Domiciliul persoanei este adresa la care aceasta declara ca are locuinta principala, trecuta in actul de identitate (CI, BI), asa cum este luata in evidenta organelor administrative ale statului. In stabilirea valorii acestui indicator nu se tine cont de resedinta obisnuita, de perioada si/sau motivul absentei de la domiciliu." />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Populația calculată este numărul de persoane care se așteaptă a fi în anul următor și se calculează ca fiind suma dintre populația din anul curent, natalitate plus imigranți (inputurile), minus emigranți și mortalitate (outputurile), sau ca suma de variatie migratoare si naturala (variatie generala)."/>
+
+        <ImageView
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pop_declarata"/>
+    </LinearLayout>
+
+</ScrollView>
