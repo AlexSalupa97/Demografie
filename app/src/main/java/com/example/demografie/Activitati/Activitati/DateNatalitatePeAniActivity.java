@@ -29,7 +29,7 @@ public class DateNatalitatePeAniActivity extends AppCompatActivity {
         setContentView(R.layout.activity_date_natalitate_pe_ani);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Mortalitatea pe ani");
+        actionBar.setTitle("Natalitatea pe ani");
 
 
         StringBuilder sb = new StringBuilder();
