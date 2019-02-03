@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.demografie.Activitati.Clase.Populatie;
+import com.example.demografie.Activitati.Fragmente.CalculIndicatoriFragment;
 import com.example.demografie.R;
 
 import java.util.ArrayList;
@@ -59,7 +60,7 @@ public class AdaptorPopulatie extends ArrayAdapter<Populatie> {
         holder.tvPopDeclarata.setText("Pop. declarata: "+String.valueOf(curent.getPopulatieDeclarata()));
         holder.tvPopCalculata.setText("Pop. calculata: "+String.valueOf(curent.getPopulatieCalculata()));
 
-        if(curent.getPopulatieDeclarata()-curent.getPopulatieCalculata()<30000)
+        if(curent.getPopulatieDeclarata()-curent.getPopulatieCalculata()< CalculIndicatoriFragment.valoare)
             viewRefolosibil.setBackgroundResource(R.drawable.gradient_ok);
         else
             viewRefolosibil.setBackgroundResource(R.drawable.gradient_not_ok);

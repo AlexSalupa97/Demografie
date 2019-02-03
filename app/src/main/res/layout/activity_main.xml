@@ -15,7 +15,7 @@
 
 
         <TextView
-            android:text="Titlul proiectului"
+            android:text="Analiza variatiei migatorii si naturale in Romania si discrepantele intre populatia declarata si cea calculata"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="15"
@@ -24,7 +24,7 @@
             android:shadowDy="1.3"
             android:shadowRadius="1.6"
             android:textColor="@color/colorAccent"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             android:gravity="center_vertical|center_horizontal"/>
 
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/gradient_redocean"
+        android:background="@color/colorPrimary"
         app:headerLayout="@layout/navigation_drawer_header"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"

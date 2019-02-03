@@ -1,11 +1,15 @@
 package com.example.demografie.Activitati.Fragmente;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +33,8 @@ public class CalculIndicatoriFragment extends Fragment {
 
     View rootView;
     ListView listView;
+    Button btnOk;
+    EditText etValoare;
 
     TextView tvVariatieGenerala;
 
@@ -43,6 +49,11 @@ public class CalculIndicatoriFragment extends Fragment {
     ArrayList<Integer> listaVariatieGenerala;
 
     ArrayList<Populatie> listaCalculPopulatie;
+
+    LayoutInflater layoutInflater;
+    ViewGroup viewGroup;
+
+    public static int valoare;
 
 
     public CalculIndicatoriFragment() {
@@ -95,8 +106,26 @@ public class CalculIndicatoriFragment extends Fragment {
 
 
         listView=(ListView)rootView.findViewById(R.id.lvPopulatie);
-        AdaptorPopulatie adaptor=new AdaptorPopulatie(getActivity(),listaCalculPopulatie);
+        final AdaptorPopulatie adaptor=new AdaptorPopulatie(getActivity(),listaCalculPopulatie);
         listView.setAdapter(adaptor);
+
+        etValoare=(EditText)rootView.findViewById(R.id.etValoare);
+
+
+        layoutInflater=inflater;
+        viewGroup=container;
+        valoare=0;
+        btnOk=(Button)rootView.findViewById(R.id.btnOk);
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                valoare=Integer.parseInt(etValoare.getText().toString());
+                layoutInflater.inflate(R.layout.fragment_calcul_indicatori, viewGroup);
+                listView.setAdapter(adaptor);
+                InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+            }
+        });
 
 
 

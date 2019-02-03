@@ -9,40 +9,59 @@
 
 
     <Button
+        android:layout_marginTop="8dp"
         android:id="@+id/btnNatalitate"
+        style="@style/RoundedCornerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Natalitatea pe judete (1960 si 2016)"/>
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_button"
+        android:text="Natalitatea pe judete (1960 si 2016)" />
 
     <Button
         android:id="@+id/btnNatalitatePeAni"
+        style="@style/RoundedCornerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Natalitatea pe ani (1990-2016)"/>
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_button"
+        android:text="Natalitatea pe ani (1990-2016)" />
 
     <Button
         android:id="@+id/btnMortalitatePeAni"
+        style="@style/RoundedCornerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mortalitatea pe ani (1990-2016)"/>
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_button"
+        android:text="Mortalitatea pe ani (1990-2016)" />
 
     <Button
         android:id="@+id/btnEmigranti"
+        style="@style/RoundedCornerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Emigranti pe ani (1990-2017)"/>
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_button"
+        android:text="Emigranti pe ani (1990-2017)" />
 
 
     <Button
         android:id="@+id/btnImigranti"
+        style="@style/RoundedCornerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Imigranti pe ani (1991-2017)"/>
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_button"
+        android:text="Imigranti pe ani (1991-2017)" />
 
     <Button
         android:id="@+id/btnPopulatieTotala"
+        style="@style/RoundedCornerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Populatia dupa domiciliu la 1 ianuarie (1992-2018)"/>
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_button"
+        android:text="Populatia dupa domiciliu la 1 ianuarie (1992-2018)" />
 
 </LinearLayout>

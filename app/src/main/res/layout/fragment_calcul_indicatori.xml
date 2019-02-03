@@ -3,14 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/silver2"
+    android:background="#4c5D88"
+    android:orientation="vertical"
     tools:context=".Activitati.Fragmente.CalculIndicatoriFragment">
 
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <EditText
+            android:id="@+id/etValoare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:hint="Introduceti valoarea dorita"
+            android:textColorHint="@color/silver"
+            android:textColor="@color/silver" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnOk"
+            android:text="ok"/>
+
+
+    </LinearLayout>
+
+    <ListView
         android:id="@+id/lvPopulatie"
-        android:dividerHeight="8dp"
-        android:divider="@color/silver2"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/silver2"
+        android:dividerHeight="8dp" />
 
 </LinearLayout>

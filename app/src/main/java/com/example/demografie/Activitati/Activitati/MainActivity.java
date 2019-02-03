@@ -106,11 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
-        if (id == R.id.test1) {
-            Toast.makeText(getApplicationContext(), "Test1", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.test2) {
-            Toast.makeText(getApplicationContext(), "Test2", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.informatiiAplicatie) {
+         if (id == R.id.informatiiAplicatie) {
             Toast.makeText(getApplicationContext(), "Informatii aplicatie", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.iesireAplicatie) {
             drawerLayout.closeDrawer(GravityCompat.START);
