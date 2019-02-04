@@ -61,11 +61,13 @@
             android:layout_marginBottom="8dp"
             android:text="Populația calculată este numărul de persoane care se așteaptă a fi în anul următor și se calculează ca fiind suma dintre populația din anul curent, natalitate plus imigranți (inputurile), minus emigranți și mortalitate (outputurile), sau ca suma de variatie migratoare si naturala (variatie generala)."/>
 
-        <ImageView
-            android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/pop_declarata"/>
+            style="@style/RoundedCornerButton"
+            android:background="@drawable/round_button"
+            android:text="Vezi formula"
+            android:id="@+id/btnImag"/>
     </LinearLayout>
 
 </ScrollView>

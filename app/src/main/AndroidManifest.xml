@@ -10,15 +10,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activitati.Activitati.InformatiiActivity"
-            android:label="Informatii generale"
+        <activity android:name=".Activitati.Activitati.ImagineActivity"
+            android:label="Imagine"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".Activitati.Activitati.DatePopulatieActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activitati.Activitati.DateImigrantiActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activitati.Activitati.DateEmigrantiActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activitati.Activitati.InformatiiActivity"
+            android:label="Informatii generale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activitati.Activitati.DatePopulatieActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activitati.Activitati.DateImigrantiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activitati.Activitati.DateEmigrantiActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activitati.Activitati.GraficeSuprapunereActivity"
             android:screenOrientation="landscape" />
