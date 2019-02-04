@@ -85,6 +85,7 @@ public class CalculIndicatoriFragment extends Fragment {
             variatieNaturala -= listaMortalitate.get(i).getValoare();
             listaVariatieNaturala.add(variatieNaturala);
         }
+        listaVariatieNaturala.add(0);
 
 
         for(int i=0;i<listaImigranti.size()-1;i++)
@@ -94,13 +95,14 @@ public class CalculIndicatoriFragment extends Fragment {
             variatieMigratorie-=listaEmigranti.get(i+1).getValoare();
             listaVariatieMigratorie.add(variatieMigratorie);
         }
+        listaVariatieMigratorie.add(0);
 
         for(int i=0;i<listaVariatieMigratorie.size();i++)
             listaVariatieGenerala.add(listaVariatieMigratorie.get(i)+listaVariatieNaturala.get(i));
 
         int an=1993;
-        for(int i=1;i<listaVariatieGenerala.size();i++) {
-            listaCalculPopulatie.add(new Populatie(an, listaPopulatie.get(i).getValoare(), listaPopulatie.get(i).getValoare() + listaVariatieGenerala.get(i), listaVariatieMigratorie.get(i), listaVariatieNaturala.get(i)));
+        for(int i=0;i<listaVariatieGenerala.size()-1;i++) {
+            listaCalculPopulatie.add(new Populatie(an, listaPopulatie.get(i+1).getValoare(), listaPopulatie.get(i).getValoare() + listaVariatieGenerala.get(i), listaVariatieMigratorie.get(i+1), listaVariatieNaturala.get(i+1)));
             an++;
         }
 
