@@ -57,7 +57,7 @@ public class AdaptorPopulatie extends ArrayAdapter<Populatie> {
         holder.tvAn.setText(String.valueOf(curent.getAn()));
         holder.tvVariatieMigratoare.setText("Var. migratoare: "+String.valueOf(curent.getVariatieMigratoare()));
         holder.tvVariatieNaturala.setText("Var. naturala: "+String.valueOf(curent.getVariatieNaturala()));
-        holder.tvPopDeclarata.setText("Pop. declarata: "+String.valueOf(curent.getPopulatieDeclarata()));
+        holder.tvPopDeclarata.setText("Pop. declarata dupa domiciliu: "+String.valueOf(curent.getPopulatieDeclarata()));
         holder.tvPopCalculata.setText("Pop. calculata: "+String.valueOf(curent.getPopulatieCalculata()));
 
         if(curent.getPopulatieDeclarata()-curent.getPopulatieCalculata()< CalculIndicatoriFragment.valoare)

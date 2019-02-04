@@ -13,120 +13,154 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Miscarea naturala a populatiei"
-            android:textStyle="bold|italic"/>
+            android:textStyle="bold|italic" />
 
-
-        <ListView
-            android:id="@+id/lvGrafice"
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/gvNat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:background="@color/colorAccent"
-            android:divider="@color/silver2"
-            android:dividerHeight="8dp"
-            android:orientation="vertical" />
+            android:minHeight="200dp" />
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/gvMort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAccent"
+            android:minHeight="200dp" />
+
+
+        <!--<ListView-->
+        <!--android:id="@+id/lvGrafice"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:divider="@color/silver2"-->
+        <!--android:dividerHeight="8dp"-->
+        <!--android:orientation="vertical" />-->
 
         <Button
+            android:id="@+id/btnVizualizareSuprapunere"
+            style="@style/RoundedCornerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnVizualizareSuprapunere"
-            android:text="Vizualizare suprapunere natalitate-mortalitate"/>
+            android:background="@drawable/round_button"
+            android:text="Vizualizare suprapunere natalitate-mortalitate" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:text="Miscarea migratorie a populatiei"
-            android:textStyle="bold|italic"/>
+            android:textStyle="bold|italic" />
 
 
-        <ListView
-            android:id="@+id/lvGraficeMigratie"
+        <!--<ListView-->
+        <!--android:id="@+id/lvGraficeMigratie"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:divider="@color/silver2"-->
+        <!--android:dividerHeight="8dp"-->
+        <!--android:orientation="vertical" />-->
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/gvImig"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
             android:background="@color/colorAccent"
-            android:divider="@color/silver2"
-            android:dividerHeight="8dp"
-            android:orientation="vertical" />
+            android:minHeight="200dp" />
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/gvEmig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorAccent"
+            android:minHeight="200dp" />
 
         <Button
+            android:id="@+id/btnVizualizareSuprapunereMigratie"
+            style="@style/RoundedCornerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnVizualizareSuprapunereMigratie"
-            android:text="Vizualizare suprapunere imigratie-emigratie"/>
+            android:background="@drawable/round_button"
+            android:text="Vizualizare suprapunere imigratie-emigratie" />
 
         <!--<LinearLayout-->
-            <!--android:visibility="gone"-->
-            <!--android:orientation="vertical" android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:minHeight="200dp"-->
-            <!--android:background="@color/colorAccent"-->
-            <!--android:layout_margin="8dp">-->
+        <!--android:visibility="gone"-->
+        <!--android:orientation="vertical" android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:minHeight="200dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:layout_margin="8dp">-->
 
-            <!--<TextView-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:textStyle="bold|italic"-->
-                <!--android:textAllCaps="true"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0dp"-->
-                <!--android:layout_weight="2"-->
-                <!--android:text="Suprapunere Natalitate-Mortalitate (1990-2016)"/>-->
+        <!--<TextView-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:textStyle="bold|italic"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="2"-->
+        <!--android:text="Suprapunere Natalitate-Mortalitate (1990-2016)"/>-->
 
-            <!--<com.jjoe64.graphview.GraphView-->
-                <!--android:id="@+id/gvGraph"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0dp"-->
-                <!--android:layout_weight="10"/>-->
+        <!--<com.jjoe64.graphview.GraphView-->
+        <!--android:id="@+id/gvGraph"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="10"/>-->
 
         <!--</LinearLayout>-->
 
-        <TextView
-            android:visibility="gone"
-            android:layout_margin="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bar Charts"
-            android:textStyle="bold|italic"/>
+        <!--<TextView-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_margin="16dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Bar Charts"-->
+        <!--android:textStyle="bold|italic"/>-->
 
-        <ListView
-            android:visibility="gone"
-            android:id="@+id/lvGrafice1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/colorAccent"
-            android:divider="@color/silver2"
-            android:dividerHeight="8dp"
-            android:orientation="vertical" />
+        <!--<ListView-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/lvGrafice1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:divider="@color/silver2"-->
+        <!--android:dividerHeight="8dp"-->
+        <!--android:orientation="vertical" />-->
 
 
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/graph"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:visibility="gone" />
+        <!--<com.jjoe64.graphview.GraphView-->
+        <!--android:id="@+id/graph"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:visibility="gone" />-->
 
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/graph1"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:visibility="gone" />
+        <!--<com.jjoe64.graphview.GraphView-->
+        <!--android:id="@+id/graph1"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:visibility="gone" />-->
 
     </LinearLayout>
 

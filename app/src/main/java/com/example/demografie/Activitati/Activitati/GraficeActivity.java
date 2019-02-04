@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.demografie.Activitati.Fragmente.GraficeFragment;
 import com.example.demografie.R;
 import com.jjoe64.graphview.GraphView;
 
@@ -16,25 +15,39 @@ public class GraficeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_grafice);
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        String pozitie = getIntent().getStringExtra("pozitie");
         String tip=getIntent().getStringExtra("tip");
-        int x=1;
 
-        if(getIntent().getStringExtra("tip").equals("migratie"))
+        if(getIntent().getStringExtra("tip").equals("natalitate"))
         {
             ActionBar actionBar = getSupportActionBar();
-            actionBar.setTitle(GraficeFragment.listaMigratii.get(Integer.valueOf(pozitie)).getTitlu());
+            actionBar.setTitle("Natalitatea pe ani (1990-2016)");
 //        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
 
-            graph.addSeries(GraficeFragment.listaMigratii.get(Integer.parseInt(pozitie)).getSeries());
+            graph.addSeries(DateNatalitatePeAniActivity.preluareLineSeriesNatalitatePeAni(getApplicationContext()));
         }
-        else {
+        else if(getIntent().getStringExtra("tip").equals("mortalitate")){
 
             ActionBar actionBar = getSupportActionBar();
-            actionBar.setTitle(GraficeFragment.lista.get(Integer.valueOf(pozitie)).getTitlu());
+            actionBar.setTitle("Mortalitatea pe ani (1990-2016)");
 //        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
 
-            graph.addSeries(GraficeFragment.lista.get(Integer.parseInt(pozitie)).getSeries());
+            graph.addSeries(DateMortalitatePeAniActivity.preluareLineSeriesMortalitatePeAni(getApplicationContext()));
+        }
+        else if(getIntent().getStringExtra("tip").equals("imigranti")){
+
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle("Imigranti pe ani (1991-2017)");
+//        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
+
+            graph.addSeries(DateImigrantiActivity.preluareLineSeriesImigranti(getApplicationContext()));
+        }
+        else if(getIntent().getStringExtra("tip").equals("emigranti")){
+
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle("Emigranti pe ani (1990-2017)");
+//        Toast.makeText(getApplicationContext(),pozitie,Toast.LENGTH_SHORT).show();
+
+            graph.addSeries(DateEmigrantiActivity.preluareLineSeriesEmigranti(getApplicationContext()));
         }
 
         graph.getViewport().setScalableY(true);
